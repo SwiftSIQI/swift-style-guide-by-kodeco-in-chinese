@@ -1,112 +1,214 @@
 # The Official raywenderlich.com Swift Style Guide.
+
 ### Updated for Swift 4.2
 
 This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our books, tutorials, and starter kits nice and consistent — even though we have many different authors working on the books.
 
+这篇代码风格指南可能不同于你看到的其他代码风格指南。因为它倾向于保证出版物和网页内容的可读性。我们创建这篇代码风格指南的初衷是为了让我们的书、教程和初学者指南中的代码，即使在有很多作者同时协作的情况下，也能保持能高质量与风格统一。
+
 Our overarching goals are clarity, consistency and brevity, in that order.
+
+总体的目标依次排列是清晰、一致和简洁。
 
 ## Table of Contents
 
-* [Correctness](#correctness)
-* [Naming](#naming)
-  * [Prose](#prose)
-  * [Delegates](#delegates)
-  * [Use Type Inferred Context](#use-type-inferred-context)
-  * [Generics](#generics)
-  * [Class Prefixes](#class-prefixes)
-  * [Language](#language)
-* [Code Organization](#code-organization)
-  * [Protocol Conformance](#protocol-conformance)
-  * [Unused Code](#unused-code)
-  * [Minimal Imports](#minimal-imports)
-* [Spacing](#spacing)
-* [Comments](#comments)
-* [Classes and Structures](#classes-and-structures)
-  * [Use of Self](#use-of-self)
-  * [Protocol Conformance](#protocol-conformance)
-  * [Computed Properties](#computed-properties)
-  * [Final](#final)
-* [Function Declarations](#function-declarations)
-* [Function Calls](#function-calls)
-* [Closure Expressions](#closure-expressions)
-* [Types](#types)
-  * [Constants](#constants)
-  * [Static Methods and Variable Type Properties](#static-methods-and-variable-type-properties)
-  * [Optionals](#optionals)
-  * [Lazy Initialization](#lazy-initialization)
-  * [Type Inference](#type-inference)
-  * [Syntactic Sugar](#syntactic-sugar)
-* [Functions vs Methods](#functions-vs-methods)
-* [Memory Management](#memory-management)
-  * [Extending Lifetime](#extending-lifetime)
-* [Access Control](#access-control)
-* [Control Flow](#control-flow)
-  * [Ternary Operator](#ternary-operator)
-* [Golden Path](#golden-path)
-  * [Failing Guards](#failing-guards)
-* [Semicolons](#semicolons)
-* [Parentheses](#parentheses)
-* [Multi-line String Literals](#multi-line-string-literals)
-* [No Emoji](#no-emoji)
-* [Organization and Bundle Identifier](#organization-and-bundle-identifier)
-* [Copyright Statement](#copyright-statement)
-* [Smiley Face](#smiley-face)
-* [References](#references)
-
+* [正确性 Correctness](#correctness)
+* [命名 Naming](#naming)
+  * [在文章中正确引用代码 Prose](#prose)
+  * [代理 Delegates](#delegates)
+  * [使用上下文进行类型推断 Use Type Inferred Context](#use-type-inferred-context)
+  * [泛型 Generics](#generics)
+  * [类前缀 Class Prefixes](#class-prefixes)
+  * [语言 Language](#language)
+* [代码组织 Code Organization](#code-organization)
+  * [协议一致性 Protocol Conformance](#protocol-conformance)
+  * [无用代码 Unused Code](#unused-code)
+  * [简化引用 Minimal Imports](#minimal-imports)
+* [空格 Spacing](#spacing)
+* [注释 Comments](#comments)
+* [类与结构体 Classes and Structures](#classes-and-structures)
+  * [Self 的使用 Use of Self](#use-of-self)
+  * [协议一致性 Protocol Conformance](#protocol-conformance)
+  * [计算型属性 Computed Properties](#computed-properties)
+  * [FinaL 关键字 Final](#final)
+* [方法声明 Function Declarations](#function-declarations)
+* [方法调用 Function Calls](#function-calls)
+* [闭包表达式 Closure Expressions](#closure-expressions)
+* [类型 Types](#types)
+  * [常量 Constants](#constants)
+  * [静态方法和可变类型属性 Static Methods and Variable Type Properties](#static-methods-and-variable-type-properties)
+  * [可选类型 Optionals](#optionals)
+  * [延时初始化 Lazy Initialization](#lazy-initialization)
+  * [类型推断 Type Inference](#type-inference)
+  * [语法糖 Syntactic Sugar](#syntactic-sugar)
+* [函数与方法 Functions vs Methods](#functions-vs-methods)
+* [内存管理 Memory Management](#memory-management)
+  * [延长生命周期 Extending Lifetime](#extending-lifetime)
+* [访问控制 Access Control](#access-control)
+* [控制流 Control Flow](#control-flow)
+  * [三元运算符 Ternary Operator](#ternary-operator)
+* [黄金路径 Golden Path](#golden-path)
+  * [失败防护 Failing Guards](#failing-guards)
+* [分号 Semicolons](#semicolons)
+* [圆括号 Parentheses](#parentheses)
+* [多行字符串字面量 Multi-line String Literals](#multi-line-string-literals)
+* [不要使用 Emoji No Emoji](#no-emoji)
+* [组织名称和包标识 Organization and Bundle Identifier](#organization-and-bundle-identifier)
+* [版权声明 Copyright Statement](#copyright-statement)
+* [笑脸 Smiley Face](#smiley-face)
+* [参考资料 References](#references)
 
 ## Correctness
 
 Strive to make your code compile without warnings. This rule informs many style decisions such as using `#selector` types instead of string literals.
 
+尽量保证代码在编译的过程中不会出现任何警告。这条规则左右了其他规则的制定，例如使用 `#selector` 类型而不是字符串字面量这条规则。
+
 ## Naming
 
 Descriptive and consistent naming makes software easier to read and understand. Use the Swift naming conventions described in the [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/). Some key takeaways include:
 
-- striving for clarity at the call site
-- prioritizing clarity over brevity
-- using camel case (not snake case)
-- using uppercase for types (and protocols), lowercase for everything else
-- including all needed words while omitting needless words
-- using names based on roles, not types
-- sometimes compensating for weak type information
-- striving for fluent usage
-- beginning factory methods with `make`
-- naming methods for their side effects
-  - verb methods follow the -ed, -ing rule for the non-mutating version
-  - noun methods follow the formX rule for the mutating version
-  - boolean types should read like assertions
-  - protocols that describe _what something is_ should read as nouns
-  - protocols that describe _a capability_ should end in _-able_ or _-ible_
-- using terms that don't surprise experts or confuse beginners
-- generally avoiding abbreviations
-- using precedent for names
-- preferring methods and properties to free functions
-- casing acronyms and initialisms uniformly up or down
-- giving the same base name to methods that share the same meaning
-- avoiding overloads on return type
-- choosing good parameter names that serve as documentation
-- preferring to name the first parameter instead of including its name in the method name, except as mentioned under Delegates
-- labeling closure and tuple parameters
-- taking advantage of default parameters
+具有描述性和一致性的命名能够让软件更易于阅读和理解。遵循 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) 中描述的命名规范。 一些关键点包括如下：
 
-### Prose
+* striving for clarity at the call site
+
+* 在调用时力求意图清晰明确。
+
+* prioritizing clarity over brevity
+
+* 传达清晰的意图比文字的简洁更重要。
+
+* using camel case (not snake case)
+
+* 使用驼峰命名法（而不是蛇形命名法）
+
+  > 译者注：snake case 是指使用下划线的命名方法，[详情参考链接](https://fr.wikipedia.org/wiki/Snake_case)
+
+* using uppercase for types (and protocols), lowercase for everything else
+
+* 类型（和协议）使用首字母大写，其它都是首字母小写
+
+* including all needed words while omitting needless words
+
+* 包含所有需要的单词，同时省略不必要的单词
+
+* using names based on roles, not types
+
+* 基于作用命名，而不是类型
+
+* sometimes compensating for weak type information
+
+* 必要时，为弱类型补充额外的信息
+
+* striving for fluent usage
+* 尽量保证使用上的流畅性
+
+* beginning factory methods with `make`
+* 工厂方法要以 `make` 开头
+
+* naming methods for their side effects
+* 依据方法的副作用进行命名
+
+  * verb methods follow the -ed, -ing rule for the non-mutating version
+  * 对于不可变方法，动词描述的方法遵循紧跟 -ed, -ing 后缀
+
+    >译者注：verb methods 是指恰好能够被一个动词描述的方法
+
+  * noun methods follow the formX rule for the mutating version
+  
+  * 对于可变方法，名词描述的方法遵循 formX 的规则
+
+    > 译者注： formX 中的 X 指代对应的名词，例如 `y.formUnion()` 方法，X 指代 Union
+
+  * boolean types should read like assertions
+
+  * 布尔类型读起来应该像是对被调用对象的断言
+
+  * protocols that describe _what something is_ should read as nouns
+
+  * _描述事物的_ 协议，读起来应该像名词
+
+  * protocols that describe _a capability_ should end in _-able_ or _-ible_
+
+  * _描述能力_ 的协议，应该使用后缀 _-able_，_ible_
+
+* using terms that don't surprise experts or confuse beginners
+
+* 使用术语的时候，不要让专家觉得惊讶，也不要让初学者感到困惑
+
+* generally avoiding abbreviations
+
+* 通常要避免缩写
+
+* using precedent for names
+
+* 遵循名称的先例
+
+* preferring methods and properties to free functions
+* 优先选择方法或属性，而非全局函数。
+
+* casing acronyms and initialisms uniformly up or down
+* 首字母缩写的单词要根据惯例全大小或者全小写
+
+* giving the same base name to methods that share the same meaning
+* 当某些方法的含义基本一致时，那么它们可以共享一个基础方法名。
+
+* avoiding overloads on return type
+* 避免“重载返回类型”
+
+* choosing good parameter names that serve as documentation
+* 选择具有说明作用的形参名，能够让文档注释质量更高
+
+* preferring to name the first parameter instead of including its name in the method name, except as mentioned under Delegates
+* 尽量为第一个设置参数标签并避免在方法中包含第一个参数名，代理模式下的方法可以忽略此规定。
+
+* labeling closure and tuple parameters
+
+* 为闭包和元组参数设置标签
+
+* taking advantage of default parameters
+
+* 利用默认参数带来的优势
+
+### 在文章中引用代码（Prose）
 
 When referring to methods in prose, being unambiguous is critical. To refer to a method name, use the simplest form possible.
 
+在文章中引用方法时，含义明确是至关重要的。尽可能用最简单的形式引用方法。
+
 1. Write the method name with no parameters.  **Example:** Next, you need to call `addTarget`.
+
+* 写一个不带参数的方法。**例如**：下一步，你需要调用方法 `addTarget`。
+
 2. Write the method name with argument labels.  **Example:** Next, you need to call `addTarget(_:action:)`.
+
+* 写一个带参数标签的方法。**例如**：下一步，你需要调用方法 `addTarget(_:action:)`。
+
 3. Write the full method name with argument labels and types. **Example:** Next, you need to call `addTarget(_: Any?, action: Selector?)`.
+
+* 写一个带参数标签和类型的完整方法。**例如**：下一步, 你需要调用方法 `addTarget(_: Any?, action: Selector?)`。
 
 For the above example using `UIGestureRecognizer`, 1 is unambiguous and preferred.
 
+上面是一个使用 `UIGestureRecognizer` 的例子, 1 的表述明确，也是应当被首先采用的描述方式。
+
 **Pro Tip:** You can use Xcode's jump bar to lookup methods with argument labels. If you’re particularly good at mashing lots of keys simultaneously, put the cursor in the method name and press **Shift-Control-Option-Command-C** (all 4 modifier keys) and Xcode will kindly put the signature on your clipboard.
+
+**小提示：** 你可以使用 Xcode 的 jump bar 来查看方法的参数标签。如果你能够相对轻松的操作多个按键，那么可以尝试将光标放在方法名上，并同时按下  **Shift-Control-Option-Command-C** 键，这些 Xcode 会将此方法的签名复制到剪贴板上。
+
+  > 译者注：与复制相关的快捷操作有三种，需要注意的是在 playground 中这些方法不生效
+  >  
+  > * **command+C** ：Copy（光标所在位置的单词）：`viewDidLoad`
+  > * **control+shift+command+C**：Copy Symbol Name（光标所在位置的消息符号名称）：`viewDidLoad()`
+  > * **option+control+shift+command+C**：Copy Qualified Symbol Name（光标所在位置的消息符号全名，带所属类名）：`ViewController.viewDidLoad()`
 
 ![Methods in Xcode jump bar](screens/xcode-jump-bar.png)
 
-
-### Class Prefixes
+### 类前缀（Class Prefixes）
 
 Swift types are automatically namespaced by the module that contains them and you should not add a class prefix such as RW. If two names from different modules collide you can disambiguate by prefixing the type name with the module name. However, only specify the module name when there is possibility for confusion which should be rare.
+
+Swift 里各种类型被其所处的模块自动分配了命名空间。不应该再添加类似于 RW 的类前缀。如果不同模块间的两个类型命名冲突，可以在类型名前添加模块名来消除歧义。无论如何，仅在少数可能引起混淆的情况下指明模块名。
 
 ```swift
 import SomeModule
@@ -114,17 +216,22 @@ import SomeModule
 let myClass = MyModule.UsefulClass()
 ```
 
-### Delegates
+### 代理（Delegates）
 
 When creating custom delegate methods, an unnamed first parameter should be the delegate source. (UIKit contains numerous examples of this.)
 
-**Preferred**:
+当创建自定义代理方法的时候，未命名的第一个参数应该是代理源。 （ UIKit 包含很多这样的例子。）
+
+
+**推荐（Preferred）**:
+
 ```swift
 func namePickerView(_ namePickerView: NamePickerView, didSelectName name: String)
 func namePickerViewShouldReload(_ namePickerView: NamePickerView) -> Bool
 ```
 
-**Not Preferred**:
+**不推荐（Not Preferred）**:
+
 ```swift
 func didSelectName(namePicker: NamePickerViewController, name: String)
 func namePickerShouldReload() -> Bool
