@@ -17,7 +17,7 @@ Our overarching goals are clarity, consistency and brevity, in that order.
   * [在文章中正确引用代码 Prose](#prose)
   * [代理 Delegates](#delegates)
   * [使用上下文进行类型推断 Use Type Inferred Context](#use-type-inferred-context)
-  * [泛型 Generics](#generics)
+  * [通用类型参数 Generics](#generics)
   * [类前缀 Class Prefixes](#class-prefixes)
   * [语言 Language](#language)
 * [代码组织 Code Organization](#code-organization)
@@ -220,8 +220,7 @@ let myClass = MyModule.UsefulClass()
 
 When creating custom delegate methods, an unnamed first parameter should be the delegate source. (UIKit contains numerous examples of this.)
 
-当创建自定义代理方法的时候，未命名的第一个参数应该是代理源。 （ UIKit 包含很多这样的例子。）
-
+当创建自定义代理方法的时候，第一个未命名的参数应该是代理源。（ UIKit 包含很多类似的例子）
 
 **推荐（Preferred）**:
 
@@ -237,11 +236,14 @@ func didSelectName(namePicker: NamePickerViewController, name: String)
 func namePickerShouldReload() -> Bool
 ```
 
-### Use Type Inferred Context
+### 使用上下文进行类型推断（Use Type Inferred Context）
 
 Use compiler inferred context to write shorter, clear code.  (Also see [Type Inference](#type-inference).)
 
-**Preferred**:
+利用编译器根据上下文进行类型推断的能力，书写更简洁明了的代码。（你也可以阅读 [类型推断](#type-inference)。)
+
+**推荐（Preferred）**:
+
 ```swift
 let selector = #selector(viewDidLoad)
 view.backgroundColor = .red
@@ -249,7 +251,8 @@ let toView = context.view(forKey: .to)
 let view = UIView(frame: .zero)
 ```
 
-**Not Preferred**:
+**不推荐（Not Preferred）**:
+
 ```swift
 let selector = #selector(ViewController.viewDidLoad)
 view.backgroundColor = UIColor.red
@@ -257,34 +260,42 @@ let toView = context.view(forKey: UITransitionContextViewKey.to)
 let view = UIView(frame: CGRect.zero)
 ```
 
-### Generics
+### 泛型 (Generics)
 
 Generic type parameters should be descriptive, upper camel case names. When a type name doesn't have a meaningful relationship or role, use a traditional single uppercase letter such as `T`, `U`, or `V`.
 
-**Preferred**:
+泛型的类型参数应该遵循大写驼峰法命名规则且具有较强的描述性。当类型参数与函数或这泛型之间无明显任何有意义的关联时，通常使用单个大写字母来命名，例如 `T` 、`U` 或 `V`。
+
+**推荐（Preferred）**:
+
 ```swift
 struct Stack<Element> { ... }
 func write<Target: OutputStream>(to target: inout Target)
 func swap<T>(_ a: inout T, _ b: inout T)
 ```
 
-**Not Preferred**:
+**不推荐（Not Preferred）**:
+
 ```swift
 struct Stack<T> { ... }
 func write<target: OutputStream>(to target: inout target)
 func swap<Thing>(_ a: inout Thing, _ b: inout Thing)
 ```
 
-### Language
+### 语言(Language)
 
 Use US English spelling to match Apple's API.
 
-**Preferred**:
+使用美式英语拼写来匹配 Apple 的 API。
+
+**推荐（Preferred）**:
+
 ```swift
 let color = "red"
 ```
 
-**Not Preferred**:
+**不推荐（Not Preferred）**:
+
 ```swift
 let colour = "red"
 ```
