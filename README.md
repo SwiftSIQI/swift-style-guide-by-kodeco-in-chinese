@@ -4,7 +4,7 @@
 
 This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our books, tutorials, and starter kits nice and consistent — even though we have many different authors working on the books.
 
-这篇代码风格指南可能不同于你看到的其他代码风格指南。因为它倾向于保证出版物和网页内容的可读性。我们创建这篇代码风格指南的初衷是为了让我们的书、教程和初学者指南中的代码，即使在有很多作者同时协作的情况下，也能保持能高质量与风格统一。
+这篇代码风格指南可能不同于你看到的其他代码风格指南。因为它倾向于保证出版物和网页内容的可读性。我们创建这篇代码风格指南的初衷是为了让我们的书、教程和初学者指南中的代码，即使在有很多作者同时协作的情况下，也能保持质量与风格统一。
 
 Our overarching goals are clarity, consistency and brevity, in that order.
 
@@ -62,13 +62,13 @@ Our overarching goals are clarity, consistency and brevity, in that order.
 
 Strive to make your code compile without warnings. This rule informs many style decisions such as using `#selector` types instead of string literals.
 
-尽量保证代码在编译的过程中不会出现任何警告。这条规则左右了其他规则的制定，例如使用 `#selector` 类型而不是字符串字面量这条规则。
+尽量保证代码在编译的过程中不会出现任何警告。这条规则左右了其他规则的制定，例如使用 `#selector` 类型而不是字符串字面量。
 
 ## 命名/Naming
 
 Descriptive and consistent naming makes software easier to read and understand. Use the Swift naming conventions described in the [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/). Some key takeaways include:
 
-具有描述性和一致性的命名能够让软件更易于阅读和理解。遵循 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) 中描述的命名规范。 一些关键点包括如下：
+具有描述性和一致性的命名能够让软件更易于阅读和理解。遵循 [API Design Guidelines](https://swift.org/documentation/api-design-guidelines/) 中描述的命名规范。 下面展示了一些关键点：
 
 * striving for clarity at the call site
 
@@ -80,25 +80,25 @@ Descriptive and consistent naming makes software easier to read and understand. 
 
 * using camel case (not snake case)
 
-* 使用驼峰命名法（而不是蛇形命名法）
+* 使用驼峰命名法（而不是蛇形命名法）。
 
   > 译者注：snake case 是指使用下划线的命名方法，[详情参考链接](https://fr.wikipedia.org/wiki/Snake_case)
 
 * using uppercase for types (and protocols), lowercase for everything else
 
-* 类型（和协议）使用首字母大写，其它都是首字母小写
+* 类型（和协议）使用首字母大写，其它都是首字母小写。
 
 * including all needed words while omitting needless words
 
-* 包含所有需要的单词，同时省略不必要的单词
+* 包含所有需要的单词，同时省略不必要的单词。
 
 * using names based on roles, not types
 
-* 基于作用命名，而不是类型
+* 基于作用命名，而不是类型。
 
 * sometimes compensating for weak type information
 
-* 必要时，为弱类型补充额外的信息
+* 必要时，为无明确意义的类型补充额外信息。
 
 * striving for fluent usage
 * 尽量保证使用上的流畅性
@@ -110,19 +110,19 @@ Descriptive and consistent naming makes software easier to read and understand. 
 * 依据方法的副作用进行命名
 
   * verb methods follow the -ed, -ing rule for the non-mutating version
-  * 对于不可变方法，动词描述的方法遵循紧跟 -ed, -ing 后缀
+  * 针对不可变的场景，动词描述的方法遵循紧跟 -ed, -ing 后缀
 
     >译者注：verb methods 是指恰好能够被一个动词描述的方法
 
   * noun methods follow the formX rule for the mutating version
   
-  * 对于可变方法，名词描述的方法遵循 formX 的规则
+  * 针对可变的场景，名词描述的方法遵循 formX 的规则
 
     > 译者注： formX 中的 X 指代对应的名词，例如 `y.formUnion()` 方法，X 指代 Union
 
   * boolean types should read like assertions
 
-  * 布尔类型读起来应该像是对被调用对象的断言
+  * 布尔类型读起来像是断言的感觉
 
   * protocols that describe _what something is_ should read as nouns
 
@@ -142,25 +142,33 @@ Descriptive and consistent naming makes software easier to read and understand. 
 
 * using precedent for names
 
-* 遵循名称的先例
+* 命名可以遵循先例
 
 * preferring methods and properties to free functions
+
 * 优先选择方法或属性，而非全局函数。
 
+> 译者注：free function 在这里翻译为全局函数，[详情请点击这里](https://en.wikipedia.org/wiki/Free_function)
+
 * casing acronyms and initialisms uniformly up or down
-* 首字母缩写的单词要根据惯例全大小或者全小写
+
+* 首字母缩写的单词要根据惯例保持全大小或者全小写的方式
 
 * giving the same base name to methods that share the same meaning
+
 * 当某些方法的含义基本一致时，那么它们可以共享一个基础方法名。
 
 * avoiding overloads on return type
+
 * 避免“重载返回类型”
 
 * choosing good parameter names that serve as documentation
+
 * 选择具有说明作用的形参名，能够让文档注释质量更高
 
 * preferring to name the first parameter instead of including its name in the method name, except as mentioned under Delegates
-* 尽量为第一个设置参数标签并避免在方法中包含第一个参数名，代理模式下的方法可以忽略此规定。
+
+* 尽量为第一个参数设置参数标签，不要将此参数标签放在方法名中，在代理模式下的方法可以忽略此规定。
 
 * labeling closure and tuple parameters
 
@@ -186,15 +194,15 @@ When referring to methods in prose, being unambiguous is critical. To refer to a
 
 3. Write the full method name with argument labels and types. **Example:** Next, you need to call `addTarget(_: Any?, action: Selector?)`.
 
-* 写一个带参数标签和类型的完整方法。**例如**：下一步, 你需要调用方法 `addTarget(_: Any?, action: Selector?)`。
+* 写一个带参数标签和参数类型的完整方法。**例如**：下一步, 你需要调用方法 `addTarget(_: Any?, action: Selector?)`。
 
 For the above example using `UIGestureRecognizer`, 1 is unambiguous and preferred.
 
-上面是一个使用 `UIGestureRecognizer` 的例子, 1 的表述明确，也是应当被首先采用的描述方式。
+上面是一个使用 `UIGestureRecognizer` 的例子, 1 的表述简单明了，也是应当被首先采用的描述方式。
 
 **Pro Tip:** You can use Xcode's jump bar to lookup methods with argument labels. If you’re particularly good at mashing lots of keys simultaneously, put the cursor in the method name and press **Shift-Control-Option-Command-C** (all 4 modifier keys) and Xcode will kindly put the signature on your clipboard.
 
-**小提示：** 你可以使用 Xcode 的 jump bar 来查看方法的参数标签。如果你能够相对轻松的操作多个按键，那么可以尝试将光标放在方法名上，并同时按下  **Shift-Control-Option-Command-C** 键，这些 Xcode 会将此方法的签名复制到剪贴板上。
+**小提示：** 你可以使用 Xcode 的 jump bar 来查看方法的参数标签。如果你能够相对轻松的操作多个按键，那么可以尝试将光标放在方法名上，并同时按下  **Shift-Control-Option-Command-C** 键，此时 Xcode 会将此方法的签名复制到剪贴板上。
 
   > 译者注：与复制相关的快捷操作有三种，需要注意的是在 playground 中这些方法不生效
   >  
@@ -220,7 +228,7 @@ let myClass = MyModule.UsefulClass()
 
 When creating custom delegate methods, an unnamed first parameter should be the delegate source. (UIKit contains numerous examples of this.)
 
-当创建自定义代理方法的时候，第一个未命名的参数应该是代理源。（ UIKit 包含很多类似的例子）
+当创建自定义的代理方法时，第一个未命名的参数应该是代理源。（ UIKit 包含很多类似的例子）
 
 **推荐（Preferred）**:
 
@@ -264,7 +272,7 @@ let view = UIView(frame: CGRect.zero)
 
 Generic type parameters should be descriptive, upper camel case names. When a type name doesn't have a meaningful relationship or role, use a traditional single uppercase letter such as `T`, `U`, or `V`.
 
-泛型的类型参数应该遵循大写驼峰法命名规则且具有较强的描述性。当类型参数与函数或这泛型之间无明显任何有意义的关联时，通常使用单个大写字母来命名，例如 `T` 、`U` 或 `V`。
+泛型的类型参数应该遵循大写驼峰法命名规则且具有较强的描述性。当类型参数与函数或泛型之间无明显任何有意义的关联时，通常使用单个大写字母来命名，例如 `T` 、`U` 或 `V`。
 
 **推荐（Preferred）**:
 
@@ -304,15 +312,13 @@ let colour = "red"
 
 Use extensions to organize your code into logical blocks of functionality. Each extension should be set off with a `// MARK: -` comment to keep things well-organized.
 
-用扩展特性将代码组织成各个不同的功能逻辑块。每个扩展都应该添加 `// MARK: -` 注释符号，以保证代码的结构清晰。
+利用扩展的特性将代码组织成各个不同的功能逻辑块。每个扩展都应该添加 `// MARK: -` 注释符号，以保证代码的结构清晰。
 
 ### 协议一致性/Protocol Conformance
 
-> 译者注： protocol conformance 到底翻译成啥？
-
 In particular, when adding protocol conformance to a model, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
 
-通常来说，当遵循某个协议后，推荐将与该协议相关的方法统一到某个单独的扩展中。这使得让与协议相关的方法聚集在一起，也将简化整体的代码结构。
+通常来说，当遵循某个协议后，推荐将与该协议相关的方法统一到某个单独的扩展中。这会让与协议相关的方法聚集在一起，也将简化整体的代码结构。
 
 **推荐（Preferred）**:
 
@@ -342,7 +348,7 @@ class MyViewController: UIViewController, UITableViewDataSource, UIScrollViewDel
 
 Since the compiler does not allow you to re-declare protocol conformance in a derived class, it is not always required to replicate the extension groups of the base class. This is especially true if the derived class is a terminal class and a small number of methods are being overridden. When to preserve the extension groups is left to the discretion of the author.
 
-Since the compiler does not allow you to re-declare protocol conformance in a derived class, it is not always required to replicate the extension groups of the base class. This is especially true if the derived class is a terminal class and a small number of methods are being overridden. 应由作者自行决定何时保留扩展组。
+因为编译器不允许你在派生类中重新声明已经遵守的协议，所以你并不总需要重复基类扩展里的相关代码。这在派生类是一个终端类且只有很少的方法需要重写的情况下十分常见。何时保留扩展组将由开发者自行决定。
 
 For UIKit view controllers, consider grouping lifecycle, custom accessors, and IBAction in separate class extensions.
 
@@ -352,11 +358,11 @@ For UIKit view controllers, consider grouping lifecycle, custom accessors, and I
 
 Unused (dead) code, including Xcode template code and placeholder comments should be removed. An exception is when your tutorial or book instructs the user to use the commented code.
 
-像 Xcode 模板工程代码和占位注释这样的无用代码，应该被移除掉。教程或书籍中指导用户使用的注释代码除外。
+像 Xcode 模板工程代码和占位注释这样的无用代码，应该被移除掉。但教程或书籍中用于指导用户使用的注释代码除外。
 
 Aspirational methods not directly associated with the tutorial whose implementation simply calls the superclass should also be removed. This includes any empty/unused UIApplicationDelegate methods.
 
-仅实现简单调用父类，且与教程无直接关联的方法也应该被移除。这里包括任何为空的或无用的 UIApplicationDelegate 方法。
+对于仅实现简单的调用父类，且与教程无直接关联的方法也应该被移除。这里包括任何为空的或无用的 UIApplicationDelegate 方法。
 
 **推荐（Preferred）**:
 
