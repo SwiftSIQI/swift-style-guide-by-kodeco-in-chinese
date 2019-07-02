@@ -1,5 +1,39 @@
 # raywenderlich.com 官方代码风格指南中文版[长期维护项目]
 
+## 原文地址
+
+[英文原版在线版](https://github.com/raywenderlich/swift-style-guide)
+
+## 更新记录
+
+* 2019.07.02 完成初稿
+  * 与原文 master 分支的 [1c9e796 节点](https://github.com/raywenderlich/swift-style-guide/commit/1c9e7967fc5b5b27bab5e25c1f3734d914c9e27e)一致， 2019 年 04 年 27 日
+
+## 贡献力量
+
+如果想做出贡献的话，你可以：
+
+* 参与翻译
+* 帮忙校对，挑错别字、病句等等
+* 提出修改建议
+* 提出术语翻译建议
+
+## 翻译建议
+
+如果你有兴趣参与项目，请仔细阅读说明：
+
+排版格式和流程说明：
+
+* 翻译排版格式要求参考 SwiftGG [排版指南](https://github.com/SwiftGGTeam/translation/blob/master/SwiftGG%20排版指南.md)
+* Pull Request 发起方式参考 SwiftGG [Pull Request 说明](https://github.com/SwiftGGTeam/translation/blob/master/%E7%BF%BB%E8%AF%91%E6%B5%81%E7%A8%8B%E6%A6%82%E8%BF%B0%E5%8F%8APR%E8%AF%B4%E6%98%8E.md#%E5%A6%82%E4%BD%95%E5%8F%91%E8%B5%B7-pull-request)
+
+其他说明：
+
+* 相关术语请严格按照术语表来翻译，如果有问题可以发 Issue 大家一起讨论
+* 使用 Markdown 进行翻译，文件名必须使用英文
+* 翻译后的文档请放到 source 文件夹下的对应章节中，然后 Pull Request 即可，我们会用 GitBook 编译成网页
+* 有其他任何问题都欢迎发 Issue
+
 ### Updated for Swift 4.2
 
 This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our books, tutorials, and starter kits nice and consistent — even though we have many different authors working on the books.
@@ -101,48 +135,52 @@ Descriptive and consistent naming makes software easier to read and understand. 
 * 必要时，为无明确意义的类型补充额外信息。
 
 * striving for fluent usage
-* 尽量保证使用上的流畅性
+
+* 尽量保证使用上的流畅性。
 
 * beginning factory methods with `make`
-* 工厂方法要以 `make` 开头
+
+* 工厂方法要以 `make` 开头。
 
 * naming methods for their side effects
-* 依据方法的副作用进行命名
+
+* 依据方法的副作用进行命名。
 
   * verb methods follow the -ed, -ing rule for the non-mutating version
-  * 针对不可变的场景，动词描述的方法遵循紧跟 -ed, -ing 后缀
 
-    >译者注：verb methods 是指恰好能够被一个动词描述的方法
+  * 针对不可变的场景，动词描述的方法遵循紧跟 -ed, -ing 后缀。
+
+    >译者注：verb methods 是指恰好能够被一个动词描述的方法。
 
   * noun methods follow the formX rule for the mutating version
   
-  * 针对可变的场景，名词描述的方法遵循 formX 的规则
+  * 针对可变的场景，名词描述的方法遵循 formX 的规则。
 
-    > 译者注： formX 中的 X 指代对应的名词，例如 `y.formUnion()` 方法，X 指代 Union
+    > 译者注： formX 中的 X 指代对应的名词，例如 `y.formUnion()` 方法，X 指代 Union。
 
   * boolean types should read like assertions
 
-  * 布尔类型读起来像是断言的感觉
+  * 布尔类型读起来像是断言的感觉。
 
   * protocols that describe _what something is_ should read as nouns
 
-  * _描述事物的_ 协议，读起来应该像名词
+  * _描述事物的_ 协议，读起来应该像名词。
 
   * protocols that describe _a capability_ should end in _-able_ or _-ible_
 
-  * _描述能力_ 的协议，应该使用后缀 _-able_，_ible_
+  * _描述能力_ 的协议，应该使用后缀 _-able_，_ible_。
 
 * using terms that don't surprise experts or confuse beginners
 
-* 使用术语的时候，不要让专家觉得惊讶，也不要让初学者感到困惑
+* 使用术语的时候，不要让专家觉得惊讶，也不要让初学者感到困惑。
 
 * generally avoiding abbreviations
 
-* 通常要避免缩写
+* 通常要避免缩写。
 
 * using precedent for names
 
-* 命名可以遵循先例
+* 命名可以遵循先例。
 
 * preferring methods and properties to free functions
 
@@ -152,7 +190,7 @@ Descriptive and consistent naming makes software easier to read and understand. 
 
 * casing acronyms and initialisms uniformly up or down
 
-* 首字母缩写的单词要根据惯例保持全大小或者全小写的方式
+* 首字母缩写的单词要根据惯例保持全大小或者全小写的方式。
 
 * giving the same base name to methods that share the same meaning
 
@@ -160,11 +198,11 @@ Descriptive and consistent naming makes software easier to read and understand. 
 
 * avoiding overloads on return type
 
-* 避免“重载返回类型”
+* 避免“重载返回类型”。
 
 * choosing good parameter names that serve as documentation
 
-* 选择具有说明作用的形参名，能够让文档注释质量更高
+* 选择具有说明作用的形参名，能够让文档注释质量更高。
 
 * preferring to name the first parameter instead of including its name in the method name, except as mentioned under Delegates
 
@@ -172,11 +210,11 @@ Descriptive and consistent naming makes software easier to read and understand. 
 
 * labeling closure and tuple parameters
 
-* 为闭包和元组参数设置标签
+* 为闭包和元组参数设置标签。
 
 * taking advantage of default parameters
 
-* 利用默认参数带来的优势
+* 利用默认参数带来的优势。
 
 ### 在文章中引用代码/Prose
 
@@ -204,11 +242,11 @@ For the above example using `UIGestureRecognizer`, 1 is unambiguous and preferre
 
 **小提示：** 你可以使用 Xcode 的 jump bar 来查看方法的参数标签。如果你能够相对轻松的操作多个按键，那么可以尝试将光标放在方法名上，并同时按下  **Shift-Control-Option-Command-C** 键，此时 Xcode 会将此方法的签名复制到剪贴板上。
 
-  > 译者注：与复制相关的快捷操作有三种，需要注意的是在 playground 中这些方法不生效
+  > 译者注：与复制相关的快捷操作有三种，需要注意的是在 playground 中这些方法不生效。
   >  
-  > * **command+C** ：Copy（光标所在位置的单词）：`viewDidLoad`
-  > * **control+shift+command+C**：Copy Symbol Name（光标所在位置的消息符号名称）：`viewDidLoad()`
-  > * **option+control+shift+command+C**：Copy Qualified Symbol Name（光标所在位置的消息符号全名，带所属类名）：`ViewController.viewDidLoad()`
+  > * **command+C** ：Copy（光标所在位置的单词）：`viewDidLoad`。
+  > * **control+shift+command+C**：Copy Symbol Name（光标所在位置的消息符号名称）：`viewDidLoad()`。
+  > * **option+control+shift+command+C**：Copy Qualified Symbol Name（光标所在位置的消息符号全名，带所属类名）：`ViewController.viewDidLoad()`。
 
 ![Methods in Xcode jump bar](screens/xcode-jump-bar.png)
 
@@ -348,7 +386,7 @@ class MyViewController: UIViewController, UITableViewDataSource, UIScrollViewDel
 
 Since the compiler does not allow you to re-declare protocol conformance in a derived class, it is not always required to replicate the extension groups of the base class. This is especially true if the derived class is a terminal class and a small number of methods are being overridden. When to preserve the extension groups is left to the discretion of the author.
 
-因为编译器不允许你在派生类中重新声明已经遵守的协议，所以你并不总需要重复基类扩展里的相关代码。这在派生类是一个终端类且只有很少的方法需要重写的情况下十分常见。何时保留扩展组将由开发者自行决定。
+因为编译器不允许你在派生类中重新声明已经遵守的协议，所以你并不总需要重复基类扩展里的相关代码。这在派生类是一个终端类且只有很少的方法需要重写的情况下是合理的。何时保留扩展组将由开发者自行决定。
 
 For UIKit view controllers, consider grouping lifecycle, custom accessors, and IBAction in separate class extensions.
 
@@ -433,7 +471,7 @@ var deviceModels: [String]
 
 * Indent using 2 spaces rather than tabs to conserve space and help prevent line wrapping. Be sure to set this preference in Xcode and in the Project settings as shown below:
 
-* 用两个字符缩进比用制表符缩进更节省空间，同时能防止换行。务必在 Xcode 和项目中设置这个偏好，如下所示：
+* 用两个字符缩进比用制表符缩进更节省空间，同时能防止过早换行。务必在 Xcode 和项目配置中进行设置，如下所示：
 
 ![Xcode indent settings](screens/indentation.png)
 
@@ -469,14 +507,15 @@ else {
 
 * There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
 
-* 方法之间应该只有一个空行，这样有助于视觉清晰和组织。方法中的空白应该按功能分隔代码，但在一个方法中有很多段意味着你应该将它们封装进不同的方法。
+* 方法之间应该只有一个空行，这样的目的是为了让代码在视觉上更清晰和更有条理。方法中的空白应该按功能分隔代码，但在一个方法中有很多段意味着你应该对其进行重构和封装。
 
 * There should be no blank lines after an opening brace or before a closing brace.
-* 在左括号之后或者右括号之前没有独立的空行
+
+* 在左括号之后或者右括号之前没有独立的空行。
 
 * Colons always have no space on the left and one space on the right. Exceptions are the ternary operator `? :`, empty dictionary `[:]` and `#selector` syntax `addTarget(_:action:)`.
 
-* 冒号总是在左边没有空格而右边有空格。比较特殊的是三元运算符 `? :`、空字典 `[:]` 和 `#selector` 语法里的方法名，例如 `addTarget(_:action:)` .
+* 冒号总是左边没有空格，而右边有空格。三元运算符 `? :`、空字典 `[:]` 和 `#selector` 语法里的方法名，例如 `addTarget(_:action:)` 不需要遵守此项规定。
 
 **推荐（Preferred）**:
 
@@ -495,23 +534,26 @@ class TestDatabase : Database {
 ```
 
 * Long lines should be wrapped at around 70 characters. A hard limit is intentionally not specified.
+
 * 当一行的字符数达到 70 个左右的时候就应该换行，这里并非硬性限制，可自行调整。
 
 * Avoid trailing whitespaces at the ends of lines.
-* 避免在行结尾的地方附上空白。
+
+* 避免在行结尾的地方增加空格。
 
 * Add a single newline character at the end of each file.
+
 * 在每个文件的结尾处增加一个单独的换行符。
 
 ## 注释/Comments
 
 When they are needed, use comments to explain **why** a particular piece of code does something. Comments must be kept up-to-date or deleted.
 
-需要的时候，用注释来解释**为什么**这个代码片段要做这些事情。注释如果不能保持最新的状态，就应当被删除。
+需要的时候，用注释来解释**为什么**这个代码片段要做这些事情。注释应当保持最新的状态，否则就该被删除。
 
 Avoid block comments inline with code, as the code should be as self-documenting as possible. _Exception: This does not apply to those comments used to generate documentation._
 
-避免在代码中出现大块的代码注释，代码应该尽可能自文档化。 _例外：这条规则不适用于那些被用于生成文档的注释。_
+避免在出现大块的代码注释，代码应该尽可能自文档化。 _例外：这条规则不适用于那些被用于生成文档的注释。_
 
 > 译者注：[详情见链接](https://github.com/raywenderlich/swift-style-guide/issues/310)
 
@@ -525,11 +567,11 @@ Avoid the use of C-style comments (`/* ... */`). Prefer the use of double- or tr
 
 Remember, structs have [value semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144). Use structs for things that do not have an identity. An array that contains [a, b, c] is really the same as another array that contains [a, b, c] and they are completely interchangeable. It doesn't matter whether you use the first array or the second, because they represent the exact same thing. That's why arrays are structs.
 
-请记住，结构体有[值语义]((https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144))。对没有标识的事物应用结构体。一个包含 [a, b, c] 的数组和另一个包含 [a, b, c] 的数组是完全一样的。他们是可以完全互换的。使用第一个数组还是第二个数组都无所谓，因为他们代表着完全相同的事物。这就是为什么数组是结构体。
+请记住，结构体有[值语义]((https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_144))。对没有身份标识的事物使用结构体类型。一个包含 [a, b, c] 的数组和另一个包含 [a, b, c] 的数组是完全一样的。他们是可以完全互换的。使用第一个数组还是第二个数组都无所谓，因为他们代表着完全相同的事物。这就是为什么数组是结构体。
 
 Classes have [reference semantics](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145). Use classes for things that do have an identity or a specific life cycle. You would model a person as a class because two person objects are two different things. Just because two people have the same name and birthdate, doesn't mean they are the same person. But the person's birthdate would be a struct because a date of 3 March 1950 is the same as any other date object for 3 March 1950. The date itself doesn't have an identity.
 
-类有[引用语义](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145)。对有标识或有具体生命周期的事物应用类。你需要将人建模为一个类，因为不同两个人对象是两个不同的事物。只是因为两个人拥有相同的名字和生日不意味着他们是同一个人。但是人的生日应该是一个结构体，因为 1950 年 3 月 3 日和任何其它的 1950 年 3 月 3 日日期对象是相同的。日期本身没有标识。
+类有[引用语义](https://developer.apple.com/library/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-XID_145)。对有身份标识或有具体生命周期的事物使用类类型。你需要将人建模为一个类，因为不同两个人对象是两个不同的事物。只是因为两个人拥有相同的名字和生日不意味着他们是同一个人。但是人的生日应该是一个结构体，因为 1950 年 3 月 3 日和任何其它的 1950 年 3 月 3 日日期对象是相同的。日期本身没有标识。
 
 Sometimes, things should be structs but need to conform to `AnyObject` or are historically modeled as classes already (`NSDate`, `NSSet`). Try to follow these guidelines as closely as possible.
 
@@ -585,13 +627,14 @@ The example above demonstrates the following style guidelines:
 
 * Specify types for properties, variables, constants, argument declarations and other statements with a space after the colon but not before, e.g. `x: Int`, and `Circle: Shape`.
 
-* 遵循冒号前有空格，冒号后无空格的规则，并应用在属性、变量、常量、参数声明和其它类型的语句中，例如：`x: Int` 和 `Circle: Shape`。
+* 遵循冒号前无空格，冒号后有空格的规则，并应用在属性、变量、常量、参数声明和其它类型的语句中，例如：`x: Int` 和 `Circle: Shape`。
 
 * Define multiple variables and structures on a single line if they share a common purpose / context.
 
-* 如果多个变量和结构体共享一个共同的目的 / 上下文，则可以在同一行中定义。
+* 如果多个变量和结构体遵循同一目的 / 上下文，则可以在同一行中定义。
 
 * Indent getter and setter definitions and property observers.
+
 * 缩进 getter、setter 的定义和属性观察器。
 
 * Don't add modifiers such as `internal` when they're already the default. Similarly, don't repeat the access modifier when overriding a method.
@@ -599,11 +642,12 @@ The example above demonstrates the following style guidelines:
 * 不要将默认的修饰符重复添加到代码中，例如 `internal` 关键字。类似的，当重写一个方法时，不要再重复添加与访问权限相关的修饰符。
 
 * Organize extra functionality (e.g. printing) in extensions.
-* 在扩展中组织额外功能（例如打印）。
+
+* 在扩展中组织额外功能（例如打印相关的代码）。
 
 * Hide non-shared, implementation details such as `centerString` inside the extension using `private` access control.
 
-* 隐藏非共享的实现细节，例如 `centerString` 在扩展中使用 `private` 级别的访问控制。
+* 利用隐藏非共享的实现细节，例如在扩展中实现 `centerString` 方法并设置 `private` 级别的访问控制权限。
 
 ### Self 的使用/Use of Self
 
@@ -613,13 +657,13 @@ For conciseness, avoid using `self` since Swift does not require it to access an
 
 Use self only when required by the compiler (in `@escaping` closures, or in initializers to disambiguate properties from arguments). In other words, if it compiles without `self` then omit it.
 
-仅在编译器需要时（在 `@escaping` 闭包或初始化函数中，消除参数与属性的歧义）才使用 self。换句话说，如果不需要 `self` 就能编译通过，则可以忽略它。
+仅在编译器需要时（在 `@escaping` 闭包或初始化函数中消除参数与属性的歧义）才使用 self。换句话说，如果不需要 `self` 就能编译通过，则可以忽略它。
 
 ### 计算属性/Computed Properties
 
 For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided.
 
-为了简洁，如果一个计算属性是只读的，则可以忽略 get 子句。仅在提供了 set 子句的情况下才需要 get 子句。
+为了简洁，如果一个计算属性是只读的，则可以忽略 get 子句。仅在提供了 set 子句存在的情况下才需要 get 子句。
 
 **推荐（Preferred）**:
 
@@ -643,7 +687,7 @@ var diameter: Double {
 
 Marking classes or members as `final` in tutorials can distract from the main topic and is not required. Nevertheless, use of `final` can sometimes clarify your intent and is worth the cost. In the below example, `Box` has a particular purpose and customization in a derived class is not intended. Marking it `final` makes that clear.
 
-在教程中将类或成员标记为 `final` 会发散主题，且不是必需的。尽管如此，`final` 的使用有时可以明确你的意图，且值得你这样做。在下面的例子中，`Box`有特定的用途，且不打算在派生类中进行自定义。标记为 `final` 可以使它更清晰。
+在教程中将类或成员标记为 `final` 会发散主题，且不是必需的。虽然 `final` 的使用有时可以明确你的意图，且值得你这样做。在下面的例子中，`Box` 有特定的用途，且不打算在派生类中进行自定义。标记为 `final` 可以使它更清晰。
 
 ```swift
 // Turn any generic type into a reference type using this Box class.
@@ -659,7 +703,7 @@ final class Box<T> {
 
 Keep short function declarations on one line including the opening brace:
 
-保持函数的声明在一行以内，包括左括号：
+保持函数的声明语句在一行以内，包括左括号：
 
 ```swift
 func reticulateSplines(spline: [Double]) -> Bool {
@@ -669,7 +713,7 @@ func reticulateSplines(spline: [Double]) -> Bool {
 
 For functions with long signatures, put each parameter on a new line and add an extra indent on subsequent lines:
 
-对于函数名较长的情况，则需要保证每个参数新起一行，且在该行的开始处添加一个换行符：
+对于函数名较长的情况，则需要保证每个参数新起一行，且在该行的开始处添加一个缩进符：
 
 ```swift
 func reticulateSplines(
@@ -683,7 +727,7 @@ func reticulateSplines(
 
 Don't use `(Void)` to represent the lack of an input; simply use `()`. Use `Void` instead of `()` for closure and function outputs.
 
-不要使用 `(Void)` 来表示入参为空的情况，用 `()` 即可。在 闭包和函数的输出参数为空的情况时，推荐使用 `Void`, 而不是 `()`
+不要使用 `(Void)` 来表示入参为空的情况，用 `()` 即可。在闭包和函数的输出参数为空的情况时，推荐使用 `Void`, 而不是 `()`
 
 **推荐（Preferred）**:
 
@@ -731,7 +775,7 @@ let success = reticulateSplines(
 
 Use trailing closure syntax only if there's a single closure expression parameter at the end of the argument list. Give the closure parameters descriptive names.
 
-仅在参数列表最后有个单独的闭包表达式参数时，使用尾随闭包语法。给闭包参数定义一个描述性的命名。
+当参数列表的最后一个元素是闭包表达式且整个参数列表里只有一个闭包参数的情况下，使用尾随闭包语法。给闭包参数定义一个描述性的命名。
 
 **推荐（Preferred）**:
 
@@ -827,7 +871,7 @@ Constants are defined using the `let` keyword and variables with the `var` keywo
 
 You can define constants on a type rather than on an instance of that type using type properties. To declare a type property as a constant simply use `static let`. Type properties declared in this way are generally preferred over global constants because they are easier to distinguish from instance properties. Example:
 
-You can define constants on a type rather than on an instance of that type using type properties. 使用 `static let` 去声明一个类型属性作为常量。相比于全局变量声明常量的方式，更推荐用这种方式声明常量，因为这种方式更能和实例属性区分开。举例：
+你可以在类型上定义常量，而不必在实例上通过属性来定义常量。 使用 `static let` 去声明一个类型属性作为常量。相比于全局变量声明常量的方式，更推荐用这种方式声明常量，因为这种方式更能和实例属性区分开。举例：
 
 **推荐（Preferred）**:
 
@@ -868,11 +912,11 @@ Declare variables and function return types as optional with `?` where a `nil` v
 
 Use implicitly unwrapped types declared with `!` only for instance variables that you know will be initialized later before use, such as subviews that will be set up in `viewDidLoad()`. Prefer optional binding to implicitly unwrapped optionals in most other cases.
 
-用 `!` 声明的隐式解包类型，适用于在使用前一定能被正确初始化的实例变量，比如子视图会在 `viewDidLoad` 中创建。大多数场景下，倾向使用可选绑定而不是隐式解包类型。
+用 `!` 声明的隐式解包类型，适用于在使用前一定能被正确初始化的实例变量，比如在 `viewDidLoad` 中设置子视图。大多数场景下，倾向使用可选绑定而不是隐式解包。
 
 When accessing an optional value, use optional chaining if the value is only accessed once or if there are many optionals in the chain:
 
-当访问一个可选值时，如果值仅被访问一次或在调用链中有许多值时，使用可选链：
+当访问一个可选值时，在可选值仅被访问一次或在调用链中有许多可选值时，使用可选链：
 
 ```swift
 textContainer?.textLabel?.setNeedsDisplay()
@@ -880,7 +924,7 @@ textContainer?.textLabel?.setNeedsDisplay()
 
 Use optional binding when it's more convenient to unwrap once and perform multiple operations:
 
-when it's more convenient to unwrap once 且之后要执行多步操作的场景下，使用可选绑定：
+当可选值只需一次就可解绑且之后执行的操作与该可选值相关的场景下，使用可选绑定：
 
 ```swift
 if let textContainer = textContainer {
@@ -937,7 +981,7 @@ UIView.animate(withDuration: 2.0) { [weak self] in
 
 Consider using lazy initialization for finer grained control over object lifetime. This is especially true for `UIViewController` that loads views lazily. You can either use a closure that is immediately called `{ }()` or call a private factory method. Example:
 
-在更细粒度地控制对象声明周期时考虑使用延迟初始化。对于 `UIViewController` ，延迟初始化视图是非常正确的。你也可以直接调用 `{ }()` 的闭包或调用私有工厂方法。例如：
+在更细粒度地控制对象声明周期时，可以考虑使用延迟初始化。对于 `UIViewController` ，延迟初始化视图是非常正确的。你也可以直接调用 `{ }()` 的闭包或调用私有工厂方法。例如：
 
 ```swift
 lazy var locationManager = makeLocationManager()
@@ -965,7 +1009,7 @@ private func makeLocationManager() -> CLLocationManager {
 
 Prefer compact code and let the compiler infer the type for constants or variables of single instances. Type inference is also appropriate for small, non-empty arrays and dictionaries. When required, specify the specific type such as `CGFloat` or `Int16`.
 
-优先选择简洁紧凑的代码，让编译器为单个实例的常量或变量推断类型。类型推断也适合于小型的，非空的数组和字典。当数据是一些特殊类型，如 `CGFloat` 或 `Int16`时，请指明此特定类型。
+优先选择简洁紧凑的代码，让编译器对单个实例的常量或变量进行推断类型。类型推断也适合于小型的，非空的数组和字典。当数据是一些特殊类型，如 `CGFloat` 或 `Int16`时，请指明此特定类型。
 
 **推荐（Preferred）**:
 
@@ -988,7 +1032,7 @@ var names = [String]()
 
 For empty arrays and dictionaries, use type annotation. (For an array or dictionary assigned to a large, multi-line literal, use type annotation.)
 
-为空数组和空字典使用类型注释。(适用于分配给大型的、多行字面量的数组和字典，使用类型注释。)
+为空数组和空字典使用类型注释。(对于大型的、多行字面量的数组和字典可以使用类型注释。)
 
 **推荐（Preferred）**:
 
@@ -1006,7 +1050,7 @@ var lookup = [String: Int]()
 
 **NOTE**: Following this guideline means picking descriptive names is even more important than before.
 
-**注意**：遵循此原则意味着选择描述性命名比之前更重要。
+**注意**：遵循此原则意味着在命名时要更注重命名的描述性。
 
 ### 语法糖/Syntactic Sugar
 
@@ -1071,7 +1115,7 @@ Code (even non-production, tutorial demo code) should not create reference cycle
 
 Extend object lifetime using the `[weak self]` and `guard let self = self else { return }` idiom. `[weak self]` is preferred to `[unowned self]` where it is not immediately obvious that `self` outlives the closure. Explicitly extending lifetime is preferred to optional chaining.
 
-使用惯用语法 `[weak self]` 和 `guard let self = self else { return }` 来延长对象的生命周期。 在 `self` 超出闭包生命周期不明显的状况下，优先使用 `[weak self]` 而不是 `[unowned self]`。 利用固定代码明确延长对象的生命周期优于可选链的书写方式。
+使用惯用语法 `[weak self]` 和 `guard let self = self else { return }` 来延长对象的生命周期。 在 `self` 超出闭包生命周期不明确的情况下，优先使用 `[weak self]` 而不是 `[unowned self]`。 利用固定代码明确延长对象的生命周期优于可选链的书写方式。
 
 **推荐（Preferred）**:
 
@@ -1109,15 +1153,15 @@ resource.request().onComplete { [weak self] response in
 
 Full access control annotation in tutorials can distract from the main topic and is not required. Using `private` and `fileprivate` appropriately, however, adds clarity and promotes encapsulation. Prefer `private` to `fileprivate`; use `fileprivate` only when the compiler insists.
 
-在教程中，完整的访问控制注释会分散主题且是不必要的。然而，适时地使用 `private` 和 `fileprivate` 会使代码更加清晰，也会有助于封装。 在合理情况下，`private` 要优于 `fileprivate`。 使用扩展可能会要求你使用 `fileprivate`。
+在教程中，完整的访问控制注释会分散主题且是不必要的。然而，适时地使用 `private` 和 `fileprivate` 会使代码更加清晰，也会有助于封装。 在合理情况下，`private` 要优于 `fileprivate`。 只有编译器强制的情况下使用 `fileprivate`。
 
 Only explicitly use `open`, `public`, and `internal` when you require a full access control specification.
 
-只有需要完整的访问控制规范时，才显式地使用 `open` 、 `public` 和 `internal`。
+只有需要完整的访问控制格式时，才显式地使用 `open` 、 `public` 和 `internal`。
 
 Use access control as the leading property specifier. The only things that should come before access control are the `static` specifier or attributes such as `@IBAction`, `@IBOutlet` and `@discardableResult`.
 
-将访问控制用作前置属性说明符。仅有 `static` 说明符或诸如 `@IBAction` 、`@IBOutlet` 和 `@discardableResult` 标志应该放在访问控制符前面。
+把访问控制相关的关键字用作前置属性说明符。仅有 `static` 说明符或诸如 `@IBAction` 、`@IBOutlet` 和 `@discardableResult` 标志应该放在访问控制符前面。
 
 **推荐（Preferred）**:
 
@@ -1174,7 +1218,6 @@ while i < 3 {
   i += 1
 }
 
-
 var i = 0
 while i < attendeeList.count {
   let person = attendeeList[i]
@@ -1187,7 +1230,7 @@ while i < attendeeList.count {
 
 The Ternary operator, `?:` , should only be used when it increases clarity or code neatness. A single condition is usually all that should be evaluated. Evaluating multiple conditions is usually more understandable as an `if` statement or refactored into instance variables. In general, the best use of the ternary operator is during assignment of a variable and deciding which value to use.
 
-当三元条件表达式能够让代码更清晰或者让代码更加整洁时，才被采用。即使是单个条件分支也需要进行判断。而在存在多个条件分支时，结合着 `if` 语句或者将相关代码重构为实例变量的方式，能够降低整体的理解难度。总体而言，使用三元条件表达式的最佳场景就是赋值变量并为变量选择值的时候。
+当三元条件表达式能够让代码更清晰或者更整洁时，才被采用。即使是单个条件分支也需要进行判断。而在存在多个条件分支时，利用 `if` 语句的方式或者将相关代码重构为实例变量的方式，能够降低整体的理解难度。总体而言，使用三元条件表达式的最佳场景就是赋值变量并为变量选择值的时候。
 
 **推荐（Preferred）**:
 
@@ -1286,17 +1329,17 @@ if let number1 = number1 {
 
 Guard statements are required to exit in some way. Generally, this should be simple one line statement such as `return`, `throw`, `break`, `continue`, and `fatalError()`. Large code blocks should be avoided. If cleanup code is required for multiple exit points, consider using a `defer` block to avoid cleanup code duplication.
 
-在某些退出代码的情况下，防护语句是必不可少的。一般地，它应该是一行简洁的语句，比如： `return`、`throw`、`break`、`continue` 和 `fatalError()`。应该避免大量的代码块。如果与清理相关的代码被用在多个退出点，则可以考虑用 `defer` 块来避免代码的重复。
+在某些退出的场景下，防护语句是必不可少的。一般地，它应该是一行简洁的语句，比如： `return`、`throw`、`break`、`continue` 和 `fatalError()`。应该避免大量的代码块。如果与清理相关的代码被用在多个退出点，则可以考虑用 `defer` 块来避免代码的重复。
 
 ## 分号/Semicolons
 
 Swift does not require a semicolon after each statement in your code. They are only required if you wish to combine multiple statements on a single line.
 
-在 Swift 中，每条代码语句后面都不需要加分号。只有在你希望在一行中结合多条语句，才需要加分号。
+在 Swift 中，每条代码语句后面都不需要加分号。只有在一行中拼接多条语句时，才需要加分号。
 
 Do not write multiple statements on a single line separated with semicolons.
 
-不要在用分号分隔的单行中写多条语句。
+需要尽量避免在一行内写多个语句。
 
 **推荐（Preferred）**:
 
@@ -1350,7 +1393,7 @@ let playerMark = (player == current ? "X" : "O")
 
 When building a long string literal, you're encouraged to use the multi-line string literal syntax. Open the literal on the same line as the assignment but do not include text on that line. Indent the text block one additional level.
 
-当创建一个较长的字符串字面量时，你可以使用多行字符串字面量的便利语法。在赋值语句处开始创建字符串字面量，但是不包含任何文字。文字将在第二行出现并缩进一个层级。
+当创建一个较长的字符串字面量时，你可以使用多行字符串字面量的便利语法。在赋值语句处开始创建这个字符串字面量，但是不包含任何文字。真正的内容将在第二行出现并缩进一个层级。
 
 **推荐（Preferred）**:
 
