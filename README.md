@@ -246,7 +246,7 @@ For the above example using `UIGestureRecognizer`, 1 is unambiguous and preferre
   > * **control+shift+command+C**：Copy Symbol Name（光标所在位置的消息符号名称）：`viewDidLoad()`。
   > * **option+control+shift+command+C**：Copy Qualified Symbol Name（光标所在位置的消息符号全名，带所属类名）：`ViewController.viewDidLoad()`。
 
-![Xcode jump bar 中的方法](screens/xcode-jump-bar.png)
+![Methods in Xcode jump bar](screens/xcode-jump-bar.png)
 
 ### 类前缀/Class Prefixes
 
@@ -471,7 +471,7 @@ var deviceModels: [String]
 
 * 用两个字符缩进比用制表符（tab）缩进更节省空间，同时能防止过早换行。务必在 Xcode 和项目配置中进行设置，如下所示：
 
-![Xcode 缩进 settings](screens/indentation.png)
+![Xcode indent settings](screens/indentation.png)
 
 * Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
 
@@ -890,10 +890,10 @@ let hypotenuse = side * Math.root2
 **不推荐（Not Preferred）**:
 
 ```swift
-let e = 2.718281828459045235360287  // 污染全局命名空间
+let e = 2.718281828459045235360287  // pollutes global namespace
 let root2 = 1.41421356237309504880168872
 
-let hypotenuse = side * root2 // root2 是什么？
+let hypotenuse = side * root2 // what is root2?
 ```
 
 ### 静态方法和可变类型属性/Static Methods and Variable Type Properties
@@ -944,12 +944,12 @@ For optional binding, shadow the original name whenever possible rather than usi
 var subview: UIView?
 var volume: Double?
 
-// 之后……
+// later on...
 if let subview = subview, let volume = volume {
   // do something with unwrapped subview and volume
 }
 
-// 另一个例子
+// another example
 UIView.animate(withDuration: 2.0) { [weak self] in
   guard let self = self else { return }
   self.alpha = 1.0
@@ -964,11 +964,11 @@ var volume: Double?
 
 if let unwrappedSubview = optionalSubview {
   if let realVolume = volume {
-    // 处理 unwrappedSubview 和 realVolume
+    // do something with unwrappedSubview and realVolume
   }
 }
 
-// 另一个例子
+// another example
 UIView.animate(withDuration: 2.0) { [weak self] in
   guard let strongSelf = self else { return }
   strongSelf.alpha = 1.0
@@ -1085,14 +1085,14 @@ Free functions are most appropriate when they aren't associated with any particu
 **推荐（Preferred）**:
 
 ```swift
-let sorted = items.mergeSorted()  // 容易检索
+let sorted = items.mergeSorted()  // easily discoverable
 rocket.launch()  // acts on the model
 ```
 
 **不推荐（Not Preferred）**:
 
 ```swift
-let sorted = mergeSort(items)  // 不容易检索
+let sorted = mergeSort(items)  // hard to discover
 launch(&rocket)
 ```
 
