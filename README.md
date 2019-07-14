@@ -6,6 +6,7 @@
 
 ## 更新记录
 
+* 2019.07.14 校对完成
 * 2019.07.02 完成初稿
   * 与原文 master 分支的 [1c9e796 节点](https://github.com/raywenderlich/swift-style-guide/commit/1c9e7967fc5b5b27bab5e25c1f3734d914c9e27e)一致， 2019 年 04 年 27 日
 
