@@ -1481,7 +1481,7 @@ The following copyright statement should be included at the top of every source 
 
 Smiley faces are a very prominent style feature of the [raywenderlich.com](https://www.raywenderlich.com/) site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket `]` is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis `)` creates a half-hearted smile, and thus is not preferred.
 
-笑脸是 [raywenderlich.com](https://www.raywenderlich.com/) 网站的一大特色！正确使用微笑来表达对编码主题的欢乐与兴奋是非常重要的。使用右方括号 `]` 是因为它代表 ASCII 中的最大笑容。右括号 `)` 表示笑脸就没有那么强烈了，因此不推荐使用。
+笑脸是 [raywenderlich.com](https://www.raywenderlich.com/) 网站的一大特色！正确使用微笑来表达对编码主题的欢乐与兴奋非常重要。右方括号 `]` 是 ASCII 能表示的最大的笑容。右括号 `)` 笑脸看起来就没那么开心，因此不推荐使用。
 
 **推荐（Preferred）**:
 
