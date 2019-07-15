@@ -65,7 +65,7 @@ Our overarching goals are clarity, consistency and brevity, in that order.
   * [Self 的使用/Use of Self](###Self-的使用/Use-of-Self)
   * [协议一致性/Protocol Conformance](###协议一致性/Protocol-Conformance)
   * [计算型属性/Computed Properties](###计算属性/Computed-Properties)
-  * [FinaL 关键字/Final](###Final-关键字/Final)
+  * [Final 关键字/Final](###Final-关键字/Final)
 * [函数声明/Function Declarations](##函数声明/Function-Declarations)
 * [函数调用/Function Calls](##函数调用/Function-Calls)
 * [闭包表达式/Closure Expressions](##闭包表达式/Closure-Expressions)
