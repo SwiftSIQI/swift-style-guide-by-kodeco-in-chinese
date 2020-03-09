@@ -5,7 +5,8 @@
 [英文原版在线版](https://github.com/raywenderlich/swift-style-guide)
 
 ## 更新记录
-
+* 2020.03.09 对翻译版本进行更新
+  * 与原文 master 分支的 [c01c0f9](https://github.com/raywenderlich/swift-style-guide/commit/c01c0f995e410f772860959adf1f777f207e9243) 节点一致， 2020.03.03
 * 2019.11.13 与原文对比无更新
   * 与原文 master 分支的 [127e671](https://github.com/raywenderlich/swift-style-guide/commit/127e6710db9965b76e4124916ebd96c0285f8ec3) 节点一致， 2019.09.05
 
@@ -118,13 +119,13 @@ Descriptive and consistent naming makes software easier to read and understand. 
 
 * 传达清晰的意图比文字的简洁更重要
 
-* using camel case (not snake case)
+* using `camelCase` (not `snake_case`)
 
 * 使用驼峰命名法（而不是蛇形命名法）
 
   > 译者注：snake case 是指使用下划线的命名方法，[详情参考链接](https://fr.wikipedia.org/wiki/Snake_case)
 
-* using uppercase for types (and protocols), lowercase for everything else
+* using `UpperCamelCase` for types (and protocols), `lowerCamelCase` for everything else
 
 * 类型（和协议）使用首字母大写，其它都是首字母小写
 
@@ -256,7 +257,7 @@ For the above example using `UIGestureRecognizer`, 1 is unambiguous and preferre
 
 ### 类前缀/Class Prefixes
 
-Swift types are automatically namespaced by the module that contains them and you should not add a class prefix such as RW. If two names from different modules collide you can disambiguate by prefixing the type name with the module name. However, only specify the module name when there is possibility for confusion which should be rare.
+Swift types are automatically namespaced by the module that contains them and you should not add a class prefix such as RW. If two names from different modules collide you can disambiguate by prefixing the type name with the module name. However, only specify the module name when there is possibility for confusion,  which should be rare.
 
 Swift 里各种类型被其所处的模块自动分配了命名空间。不应该再添加类似于 RW 的类前缀。如果不同模块间的两个类型命名冲突，可以在类型名前添加模块名来消除歧义。无论如何，仅在少数可能引起混淆的情况下添加模块名。
 
@@ -723,7 +724,8 @@ For functions with long signatures, put each parameter on a new line and add an 
 func reticulateSplines(
   spline: [Double],
   adjustmentFactor: Double,
-  translateConstant: Int, comment: String
+  translateConstant: Int, 
+  comment: String
 ) -> Bool {
   // reticulate code goes here
 }
@@ -1262,7 +1264,6 @@ When coding with conditionals, the left-hand margin of the code should be the "g
 
 ```swift
 func computeFFT(context: Context?, inputData: InputData?) throws -> Frequencies {
-
   guard let context = context else {
     throw FFTError.noContext
   }
@@ -1279,7 +1280,6 @@ func computeFFT(context: Context?, inputData: InputData?) throws -> Frequencies 
 
 ```swift
 func computeFFT(context: Context?, inputData: InputData?) throws -> Frequencies {
-
   if let context = context {
     if let inputData = inputData {
       // use context and input to compute the frequencies
@@ -1453,7 +1453,7 @@ The following copyright statement should be included at the top of every source 
 以下版权声明应该被包含在每个源文件的顶部：
 
 ```swift
-/// Copyright (c) 2019 Razeware LLC
+/// Copyright (c) 2020 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -1473,6 +1473,10 @@ The following copyright statement should be included at the top of every source 
 /// merger, publication, distribution, sublicensing, creation of derivative works,
 /// or sale is expressly withheld.
 /// 
+/// This project and source code may use libraries or frameworks that are
+/// released under various Open-Source licenses. Use of those libraries and
+/// frameworks are governed by their own individual licenses.
+///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 /// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
