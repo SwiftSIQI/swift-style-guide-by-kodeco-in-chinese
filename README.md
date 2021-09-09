@@ -5,11 +5,13 @@
 [英文原版在线版](https://github.com/raywenderlich/swift-style-guide)
 
 ## 更新记录
+
+* 2021.09.09 对翻译版本进行更新
+  * 与原文 master 分支的 [a9f6e8d](https://github.com/raywenderlich/swift-style-guide/commit/a9f6e8dd3200447bbc6f9d378fcb0c8a2b423d7f) 节点一致， 2021.09.07
 * 2020.03.09 对翻译版本进行更新
   * 与原文 master 分支的 [c01c0f9](https://github.com/raywenderlich/swift-style-guide/commit/c01c0f995e410f772860959adf1f777f207e9243) 节点一致， 2020.03.03
 * 2019.11.13 与原文对比无更新
   * 与原文 master 分支的 [127e671](https://github.com/raywenderlich/swift-style-guide/commit/127e6710db9965b76e4124916ebd96c0285f8ec3) 节点一致， 2019.09.05
-
 * 2019.09.16 与原文对比无更新
 * 2019.08.14 与原文对比无更新
 * 2019.07.14 校对完成
@@ -41,7 +43,7 @@
 * 翻译后的文档请放到 source 文件夹下的对应章节中，然后 Pull Request 即可，我们会用 GitBook 编译成网页
 * 有其他任何问题都欢迎发 Issue
 
-### Updated for Swift 4.2
+### Updated for Swift 5
 
 This style guide is different from others you may see, because the focus is centered on readability for print and the web. We created this style guide to keep the code in our books, tutorials, and starter kits nice and consistent — even though we have many different authors working on the books.
 
@@ -54,6 +56,7 @@ Our overarching goals are clarity, consistency and brevity, in that order.
 ## 目录/Table of Contents
 
 * [正确性/Correctness](#正确性Correctness)
+* [使用 SwiftLint/Using SwiftLint](#使用SwiftLintUsing-SwiftLint)
 * [命名/Naming](#命名Naming)
   * [在文章中正确引用代码/Prose](#在文章中引用代码Prose)
   * [代理/Delegates](#代理Delegates)
@@ -84,7 +87,7 @@ Our overarching goals are clarity, consistency and brevity, in that order.
   * [语法糖/Syntactic Sugar](#语法糖Syntactic-Sugar)
 * [函数与方法/Functions vs Methods](#函数-vs-方法Functions-vs-Methods)
 * [内存管理/Memory Management](#内存管理Memory-Management)
-  * [延长生命周期/Extending Lifetime](#延长对象的生命周期Extending-object-lifetime)
+  * [延长对象生命周期/Extending Object Lifetime](#延长对象的生命周期Extending-object-lifetime)
 * [访问控制/Access Control](#访问控制Access-Control)
 * [控制流/Control Flow](#控制流Control-Flow)
   * [三元条件表达式/Ternary Operator](#三元条件表达式Ternary-Operator)
@@ -94,6 +97,7 @@ Our overarching goals are clarity, consistency and brevity, in that order.
 * [括号/Parentheses](#括号Parentheses)
 * [多行字符串字面量/Multi-line String Literals](#多行字符串字面量Multi-line-String-Literals)
 * [不要使用 Emoji/No Emoji](#不要使用-EmojiNo-Emoji)
+* [不要使用 #imageLiteral 和 #colorLiteral](#不要使用#imageLiteral和#colorLiteralNo-#imageLiteral-or-#colorLiteral)
 * [组织名称和包标识/Organization and Bundle Identifier](#组织名称和包标识Organization-and-Bundle-Identifier)
 * [版权声明/Copyright Statement](#版权声明Copyright-Statement)
 * [笑脸/Smiley Face](#笑脸Smiley-Face)
@@ -104,6 +108,12 @@ Our overarching goals are clarity, consistency and brevity, in that order.
 Strive to make your code compile without warnings. This rule informs many style decisions such as using `#selector` types instead of string literals.
 
 尽量保证代码在编译的过程中不会出现任何警告。这条规则左右了其他规则的制定，例如使用 `#selector` 类型而不是字符串字面量。
+
+## 使用SwiftLint/Using-SwiftLint
+
+When writing for raywenderlich.com, you are strongly encouraged — and some teams may require — to use our SwiftLint configuration. See the [SwiftLint Policy](SWIFTLINT.markdown) for more information.
+
+当你为 raywenderlich.com 编写文章时，我们强烈建议你使用我们推荐的 SwiftLint 配置， 部分团队会强制你遵守该配置， 关于 SwiftLint 的配置详情见 [SwiftLint Policy](https://github.com/raywenderlich/swift-style-guide/blob/master/SWIFTLINT.markdown)。
 
 ## 命名/Naming
 
@@ -510,9 +520,9 @@ else {
 }
 ```
 
-* There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
+* There should be one blank line between methods and up to one blank line between type declarations to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
 
-* 方法之间应该只有一个空行，这样的目的是为了让代码在视觉上更清晰和更有条理。方法中的空白应该按功能分隔代码，但在一个方法中有很多段意味着你应该对其进行重构和封装。
+* 方法之间应该只有一个空行，类型声明之间最多应该保留一个空行，这样的目的是为了让代码在视觉上更清晰和更有条理。方法中的空白应该按功能分隔代码，但在一个方法中有很多段意味着你应该对其进行重构和封装。
 
 * There should be no blank lines after an opening brace or before a closing brace.
 
@@ -958,9 +968,10 @@ if let subview = subview, let volume = volume {
 }
 
 // another example
-UIView.animate(withDuration: 2.0) { [weak self] in
+resource.request().onComplete { [weak self] response in
   guard let self = self else { return }
-  self.alpha = 1.0
+  let model = self.updateModel(response)
+  self.updateUI(model)
 }
 ```
 
@@ -1296,7 +1307,7 @@ func computeFFT(context: Context?, inputData: InputData?) throws -> Frequencies 
 
 When multiple optionals are unwrapped either with `guard` or `if let`, minimize nesting by using the compound version when possible. In the compound version, place the `guard` on its own line, then indent each condition on its own line. The `else` clause is indented to match the conditions and the code is indented one additional level, as shown below. Example:
 
-用 `guard` 或 `if let` 解包多个可选值时，在条件允许的状态下，尽量使用混合的方式来简化嵌套。在混合的方式中，将 `guard` 关键字放在句子的最开始处，并缩进与此相关的条件分支。`else` 闭包的缩进与之前的条件分支一致，但闭包里面代码需要再缩进一级。就像下面的示例一样：
+用 `guard` 或 `if let` 解包多个可选值时，在条件允许的状态下，尽量使用混合的方式来简化嵌套。在混合的方式中，将 `guard` 关键字放在句子的最开始处，并缩进与此相关的条件分支。`else` 与 `guard` 字句的缩进匹配。就像下面的示例一样：
 
 **推荐（Preferred）**:
 
@@ -1305,8 +1316,8 @@ guard
   let number1 = number1,
   let number2 = number2,
   let number3 = number3
-  else {
-    fatalError("impossible")
+else {
+  fatalError("impossible")
 }
 // do something with numbers
 ```
@@ -1438,6 +1449,13 @@ Do not use emoji in your projects. For those readers who actually type in their 
 
 不要在工程里使用 Emoji。对于读者而言，输入这一类型的代码意义并不大。虽然看起来十分可爱，但它对于学习的帮助不大且会打乱输入代码的节奏。
 
+
+## 不要使用 #imageLiteral 和 #colorLiteral/No #imageLiteral or #colorLiteral
+
+Likewise, do not use Xcode's ability to drag a color or an image into a source statement. These turn into #colorLiteral and #imageLiteral, respectively, and present unpleasant challenges for a reader trying to enter them based on tutorial text. Instead, use `UIColor(red:green:blue)` and `UIImage(imageLiteralResourceName:)`.
+
+同样地，不要使用 Xcode 提供的 #colorLiteral 和# imageLiteral 来设置颜色或图像，这会给读者带来学习不好的体验。因此，推荐使用`UIColor(red:green:blue)`和`UIImage(imageLiteralResourceName:)`。
+
 ## 组织名称和包标识/Organization and Bundle Identifier
 
 Where an Xcode project is involved, the organization should be set to `Ray Wenderlich` and the Bundle Identifier set to `com.raywenderlich.TutorialName` where `TutorialName` is the name of the tutorial project.
@@ -1453,7 +1471,7 @@ The following copyright statement should be included at the top of every source 
 以下版权声明应该被包含在每个源文件的顶部：
 
 ```swift
-/// Copyright (c) 2020 Razeware LLC
+/// Copyright (c) 2021 Razeware LLC
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
