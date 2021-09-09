@@ -56,7 +56,7 @@ Our overarching goals are clarity, consistency and brevity, in that order.
 ## 目录/Table of Contents
 
 * [正确性/Correctness](#正确性Correctness)
-* [使用 SwiftLint/Using SwiftLint](#使用SwiftLintUsing-SwiftLint)
+* [使用 SwiftLint/Using SwiftLint](#使用-SwiftLintUsing-SwiftLint)
 * [命名/Naming](#命名Naming)
   * [在文章中正确引用代码/Prose](#在文章中引用代码Prose)
   * [代理/Delegates](#代理Delegates)
@@ -97,7 +97,7 @@ Our overarching goals are clarity, consistency and brevity, in that order.
 * [括号/Parentheses](#括号Parentheses)
 * [多行字符串字面量/Multi-line String Literals](#多行字符串字面量Multi-line-String-Literals)
 * [不要使用 Emoji/No Emoji](#不要使用-EmojiNo-Emoji)
-* [不要使用 #imageLiteral 和 #colorLiteral](#不要使用#imageLiteral和#colorLiteralNo-#imageLiteral-or-#colorLiteral)
+* [不要使用 #imageLiteral 和 #colorLiteral](#不要使用-#imageLiteral-和-#colorLiteralNo-#imageLiteral-or-#colorLiteral)
 * [组织名称和包标识/Organization and Bundle Identifier](#组织名称和包标识Organization-and-Bundle-Identifier)
 * [版权声明/Copyright Statement](#版权声明Copyright-Statement)
 * [笑脸/Smiley Face](#笑脸Smiley-Face)
@@ -109,7 +109,7 @@ Strive to make your code compile without warnings. This rule informs many style 
 
 尽量保证代码在编译的过程中不会出现任何警告。这条规则左右了其他规则的制定，例如使用 `#selector` 类型而不是字符串字面量。
 
-## 使用SwiftLint/Using-SwiftLint
+## 使用 SwiftLint/Using-SwiftLint
 
 When writing for raywenderlich.com, you are strongly encouraged — and some teams may require — to use our SwiftLint configuration. See the [SwiftLint Policy](SWIFTLINT.markdown) for more information.
 
@@ -522,7 +522,7 @@ else {
 
 * There should be one blank line between methods and up to one blank line between type declarations to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
 
-* 方法之间应该只有一个空行，类型声明之间最多应该保留一个空行，这样的目的是为了让代码在视觉上更清晰和更有条理。方法中的空白应该按功能分隔代码，但在一个方法中有很多段意味着你应该对其进行重构和封装。
+* 方法之间应该有一个空行，类型声明之间最多应该保留一个空行，这样的目的是为了让代码在视觉上更清晰和更有条理。方法中的空白应该按功能分隔代码，但在一个方法中有很多段意味着你应该对其进行重构和封装。
 
 * There should be no blank lines after an opening brace or before a closing brace.
 
