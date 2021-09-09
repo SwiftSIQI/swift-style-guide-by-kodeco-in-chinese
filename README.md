@@ -97,7 +97,7 @@ Our overarching goals are clarity, consistency and brevity, in that order.
 * [括号/Parentheses](#括号Parentheses)
 * [多行字符串字面量/Multi-line String Literals](#多行字符串字面量Multi-line-String-Literals)
 * [不要使用 Emoji/No Emoji](#不要使用-EmojiNo-Emoji)
-* [不要使用 #imageLiteral 和 #colorLiteral](#不要使用-#imageLiteral-和-#colorLiteralNo-#imageLiteral-or-#colorLiteral)
+* [不要使用 #imageLiteral 和 #colorLiteral](#不要使用-imageLiteral-和-colorLiteralNo-imageLiteral-or-colorLiteral)
 * [组织名称和包标识/Organization and Bundle Identifier](#组织名称和包标识Organization-and-Bundle-Identifier)
 * [版权声明/Copyright Statement](#版权声明Copyright-Statement)
 * [笑脸/Smiley Face](#笑脸Smiley-Face)
@@ -1448,7 +1448,6 @@ let message = "You cannot charge the flux " +
 Do not use emoji in your projects. For those readers who actually type in their code, it's an unnecessary source of friction. While it may be cute, it doesn't add to the learning and it interrupts the coding flow for these readers.
 
 不要在工程里使用 Emoji。对于读者而言，输入这一类型的代码意义并不大。虽然看起来十分可爱，但它对于学习的帮助不大且会打乱输入代码的节奏。
-
 
 ## 不要使用 #imageLiteral 和 #colorLiteral/No #imageLiteral or #colorLiteral
 
