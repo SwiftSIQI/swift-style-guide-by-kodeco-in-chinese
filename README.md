@@ -6,6 +6,8 @@
 
 ## 更新记录
 
+* 2022.01.02 对翻译版本进行更新
+	* 与原文 master 分支的 [3b85871](https://github.com/raywenderlich/swift-style-guide/commit/3b858711d49a39c15a8fd37482f1b3cfea8e29b4) 节点一致， 2022.01.02
 * 2021.09.09 对翻译版本进行更新
   * 与原文 master 分支的 [a9f6e8d](https://github.com/raywenderlich/swift-style-guide/commit/a9f6e8dd3200447bbc6f9d378fcb0c8a2b423d7f) 节点一致， 2021.09.07
 * 2020.03.09 对翻译版本进行更新
@@ -527,6 +529,27 @@ else {
 * There should be no blank lines after an opening brace or before a closing brace.
 
 * 在左括号之后或者右括号之前没有独立的空行。
+
+* Closing parentheses should not appear on a line by themselves.
+
+* 右括号不应单独出现在一行中。
+
+**推荐（Preferred）**:
+
+```swift
+let user = try await getUser(
+  for: userID,
+  on: connection)
+```
+
+**不推荐（Not Preferred）**:
+
+```swift
+let user = try await getUser(
+  for: userID,
+  on: connection
+)
+```
 
 * Colons always have no space on the left and one space on the right. Exceptions are the ternary operator `? :`, empty dictionary `[:]` and `#selector` syntax `addTarget(_:action:)`.
 
