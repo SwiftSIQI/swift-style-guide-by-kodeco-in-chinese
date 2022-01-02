@@ -7,7 +7,7 @@
 ## 更新记录
 
 * 2022.01.02 对翻译版本进行更新
-	* 与原文 master 分支的 [3b85871](https://github.com/raywenderlich/swift-style-guide/commit/3b858711d49a39c15a8fd37482f1b3cfea8e29b4) 节点一致， 2022.01.02
+  * 与原文 master 分支的 [3b85871](https://github.com/raywenderlich/swift-style-guide/commit/3b858711d49a39c15a8fd37482f1b3cfea8e29b4) 节点一致， 2022.01.02
 * 2021.09.09 对翻译版本进行更新
   * 与原文 master 分支的 [a9f6e8d](https://github.com/raywenderlich/swift-style-guide/commit/a9f6e8dd3200447bbc6f9d378fcb0c8a2b423d7f) 节点一致， 2021.09.07
 * 2020.03.09 对翻译版本进行更新
