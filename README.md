@@ -1,4 +1,4 @@
-# raywenderlich.com 官方代码风格指南中文版[长期维护项目]
+# Kodeco 官方代码风格指南中文版[长期维护项目]
 
 ## 原文地址
 
@@ -6,6 +6,8 @@
 
 ## 更新记录
 
+* 2023.10.22 对翻译版本进行更新
+  * 与原文 master 分支的 [ca4d811](https://github.com/kodecocodes/swift-style-guide/commit/ca4d811d50356f4708858c17c5bfff525f652e4c) 节点一致，2023.04.13
 * 2022.01.02 对翻译版本进行更新
   * 与原文 master 分支的 [3b85871](https://github.com/raywenderlich/swift-style-guide/commit/3b858711d49a39c15a8fd37482f1b3cfea8e29b4) 节点一致， 2022.01.02
 * 2021.09.09 对翻译版本进行更新
@@ -113,9 +115,9 @@ Strive to make your code compile without warnings. This rule informs many style 
 
 ## 使用 SwiftLint/Using-SwiftLint
 
-When writing for raywenderlich.com, you are strongly encouraged — and some teams may require — to use our SwiftLint configuration. See the [SwiftLint Policy](SWIFTLINT.markdown) for more information.
+When writing for Kodeco, you are strongly encouraged — perhaps even required, depending on your team — to use our SwiftLint configuration. See the [SwiftLint Policy](SWIFTLINT.markdown) for more information.
 
-当你为 raywenderlich.com 编写文章时，我们强烈建议你使用我们推荐的 SwiftLint 配置， 部分团队会强制你遵守该配置， 关于 SwiftLint 的配置详情见 [SwiftLint Policy](https://github.com/raywenderlich/swift-style-guide/blob/master/SWIFTLINT.markdown)。
+在为Kodeco撰写代码时，强烈鼓励（甚至可能是必须的，根据你所在的团队）使用我们的SwiftLint配置。关于 SwiftLint 的配置详情见 [SwiftLint Policy](https://github.com/raywenderlich/swift-style-guide/blob/master/SWIFTLINT.markdown)。
 
 ## 命名/Naming
 
@@ -971,6 +973,16 @@ if let textContainer = textContainer {
 }
 ```
 
+**Notes:** Swift 5.7 introduced new shorthand syntax for unwrapping optionals into shadowed variables:
+
+**注意:** Swift 5.7 引入了一种新的简写语法，用于将可选项解包到阴影变量（shadowed variables）中：
+
+```swift
+if let textContainer {
+  // do many things with textContainer
+}
+```
+
 When naming optional variables and properties, avoid naming them like `optionalString` or `maybeView` since their optional-ness is already in the type declaration.
 
 在命名可选变量和属性时，避免类似 `optionalString` 或 `maybeView` 这样的命名，因为它们的可选性已经体现在类型声明中。
@@ -1391,9 +1403,9 @@ let swift = "not a scripting language"
 let swift = "not a scripting language";
 ```
 
-**NOTE**: Swift is very different from JavaScript, where omitting semicolons is [generally considered unsafe](http://stackoverflow.com/questions/444080/do-you-recommend-using-semicolons-after-every-statement-in-javascript)
+**NOTE**: Swift is very different from JavaScript, where omitting semicolons is [generally considered unsafe](https://stackoverflow.com/questions/444080/do-you-recommend-using-semicolons-after-every-statement-in-javascript)
 
-注：Swift 非常不同于 JavaScript。在 JavaScript 中忽略分号 [一般被认为是不安全的](http://stackoverflow.com/questions/444080/do-you-recommend-using-semicolons-after-every-statement-in-javascript)。
+注：Swift 非常不同于 JavaScript。在 JavaScript 中忽略分号 [一般被认为是不安全的](https://stackoverflow.com/questions/444080/do-you-recommend-using-semicolons-after-every-statement-in-javascript)。
 
 ## 括号/Parentheses
 
@@ -1480,9 +1492,9 @@ Likewise, do not use Xcode's ability to drag a color or an image into a source s
 
 ## 组织名称和包标识/Organization and Bundle Identifier
 
-Where an Xcode project is involved, the organization should be set to `Ray Wenderlich` and the Bundle Identifier set to `com.raywenderlich.TutorialName` where `TutorialName` is the name of the tutorial project.
+Where an Xcode project is involved, the organization should be set to `Kodeco` and the Bundle Identifier set to `com.yourcompany.TutorialName` where `TutorialName` is the name of the tutorial project.
 
-涉及到 Xcode 项目的地方，组织应该被设置为 `Ray Wenderlich` 并且包标识符应该被设置为 `com.razeware.TutorialName`，其中 `TutorialName` 是教程的名字。
+涉及到 Xcode 项目的地方，组织应该被设置为 `Kodeco` 并且包标识符应该被设置为 `com.yourcompany.TutorialName`，其中 `TutorialName` 是教程的名字。
 
 ![Xcode Project settings](screens/project_settings.png)
 
@@ -1493,7 +1505,7 @@ The following copyright statement should be included at the top of every source 
 以下版权声明应该被包含在每个源文件的顶部：
 
 ```swift
-/// Copyright (c) 2021 Razeware LLC
+/// Copyright (c) 2023 Kodeco Inc.
 /// 
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -1528,9 +1540,9 @@ The following copyright statement should be included at the top of every source 
 
 ## 笑脸/Smiley Face
 
-Smiley faces are a very prominent style feature of the [raywenderlich.com](https://www.raywenderlich.com/) site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket `]` is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis `)` creates a half-hearted smile, and thus is not preferred.
+Smiley faces are a very prominent style feature of the [Kodeco](https://www.kodeco.com/) site! It is very important to have the correct smile signifying the immense amount of happiness and excitement for the coding topic. The closing square bracket `]` is used because it represents the largest smile able to be captured using ASCII art. A closing parenthesis `)` creates a half-hearted smile, and thus is not preferred.
 
-笑脸是 [raywenderlich.com](https://www.raywenderlich.com/) 网站的一大特色！正确使用微笑来表达对编码主题的欢乐与兴奋非常重要。右方括号 `]` 是 ASCII 能表示的最大的笑容。右括号 `)` 笑脸看起来就没那么开心，因此不推荐使用。
+笑脸是 [Kodeco](https://www.kodeco.com/) 网站非常显著的风格特点！拥有正确的笑容能传达出对编程主题的极度幸福和兴奋之情非常重要。闭合方括号 `]` 被用来表示能通过 ASCII 艺术表达的最大笑容。而闭合括号 `)` 则只能形成一个半喜悦的笑容，因此并不理想。
 
 **推荐（Preferred）**:
 
